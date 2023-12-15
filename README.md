@@ -1,2 +1,1 @@
-# sorting_algorithms
-projects sorting algorithm
+README.md
