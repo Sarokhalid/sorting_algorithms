@@ -3,6 +3,7 @@
  * maxi - kjhhd
  * @array: jjhhd
  * @size: kjhhd
+ * Return: jhgggs
  */
 int maxi(int *array, int size)
 {
