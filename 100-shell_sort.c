@@ -1,10 +1,10 @@
 #include "sort.h"
 /**
- * shell - jdjhh
+ * shell_sort - jdjhh
  * @array: hdgdf
  * @size: jdhggf
  */
-void shell(int *array, size_t size)
+void shell_sort(int *array, size_t size)
 {
 	size_t g = 1;
 	size_t s, m;

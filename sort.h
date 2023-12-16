@@ -25,5 +25,5 @@ void quick_sort(int *array, size_t size);
 void quick(int *array, size_t size, int l, int r);
 int part(int *array, size_t size, int l, int r);
 void swap(int *q, int *w);
-void shell(int *array, size_t size);
+void shell_sort(int *array, size_t size);
 #endif
