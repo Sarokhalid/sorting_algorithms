@@ -1,65 +1,85 @@
 #include "sort.h"
 /**
- * cocktail_sort_list - shgggs
- * @list: jhsggjj
+ * swa - hhhhjd
+ * @list: jhggf
+ * @ta: jhggd
+ * @sh: jjhggd
+ */
+void swa(listint_t **list, listint_t **ta, listint_t **sh)
+{
+	listint_t *t = (*sh)->next;
+
+	if ((*sh)->prev != NULL)
+		(*sh)->prev->next = t;
+	else
+		*list = t;
+	t->prev = (*sh)->prev;
+	(*sh)->next = t->next;
+	if (t->next != NULL)
+		t->next->prev = *sh;
+	else
+		*ta = *sh;
+	(*sh)->prev = t;
+	t->next = *sh;
+	*sh = t;
+}
+/**
+ * swab - jdshghhd
+ * @list: jhgdf
+ * @ta: jhdhjjd
+ * @sh: jhghdhj
+ */
+void swab(listint_t **list, listint_t **ta, listint_t **sh)
+{
+	listint_t *t = (*sh)->prev;
+
+	if ((*sh)->next != NULL)
+		(*sh)->next->prev = t;
+	else
+		*ta = t;
+	t->next = (*sh)->next;
+	(*sh)->prev = t->prev;
+	if (t->prev != NULL)
+		t->prev->next = *sh;
+	else
+		*list = *sh;
+	(*sh)->next = t;
+	t->prev = *sh;
+	*sh = t;
+}
+/**
+ * cocktail_sort_list - idhujiid
+ * @list: jhdggd
  */
 void cocktail_sort_list(listint_t **list)
 {
-	int sw;
-	listint_t *curr;
+	listint_t *ta, *sh;
+	bool shnot = false;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	do {
-		sw = 0;
-		for (curr = *list; curr->next != NULL; curr = curr->next)
+	for (ta = *list; ta->next != NULL;)
+		ta = ta->next;
+	while (shnot == false)
+	{
+		shnot = true;
+		for (sh = *list; sh != ta; sh = sh->next)
 		{
-			if (curr->n > curr->next->n)
+			if (sh->n > sh->next->n)
 			{
-				swa(list, &curr, &(curr->next));
-				sw = 1;
-				print_list(*list);
+				swa(list, &ta, &sh);
+				print_list((const listint_t *) *list);
+				shnot = false;
 			}
 		}
-		if (!sw)
-			break;
-		sw = 0;
-		for (; curr->prev != NULL; curr = curr->prev)
+		for (sh = sh->prev; sh != *list; sh = sh->prev)
 		{
-			if (curr->n < curr->prev->n)
+			if (sh->n < sh->prev->n)
 			{
-				swa(list, &(curr->prev), &curr);
-				sw = 1;
-				print_list(*list);
+				swab(list, &ta, &sh);
+				print_list((const listint_t *) *list);
+				shnot = false;
 			}
 		}
-	} while (sw);
-}
-/**
- * swa - hshghhjs
- * @list: hsgfggs
- * @n1: jhgs
- * @n2: jhgsgh
- */
-void swa(listint_t **list, listint_t **n1, listint_t **n2)
-{
-	listint_t *pn1, *pn2, *nn1, *nn2;
-
-	pn1 = (*n1)->prev;
-	nn1 = (*n1)->next;
-	pn2 = (*n2)->prev;
-	nn2 = (*n2)->next;
-	if (pn1 != NULL)
-		pn1->next = *n2;
-	else
-		*list = *n2;
-	if (nn2 != NULL)
-		nn2->prev = *n1;
-	(*n2)->prev = pn1;
-	(*n2)->next = *n1;
-	(*n1)->prev = nn2;
-	(*n1)->next = nn2;
-	if (nn1 != NULL)
-		nn1->prev = *n2;
-	(*n1)->next = nn2;
+	}
 }
