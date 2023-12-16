@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 /**
  * struct listint_s - Doubly linked list node
  * @n: Integer stored in the node
@@ -30,4 +31,5 @@ void shell_sort(int *array, size_t size);
 void swa(listint_t **list, listint_t **ta, listint_t **sh);
 void swab(listint_t **list, listint_t **ta, listint_t **sh);
 void cocktail_sort_list(listint_t **list);
+void counting_sort(int *array, size_t size);
 #endif
