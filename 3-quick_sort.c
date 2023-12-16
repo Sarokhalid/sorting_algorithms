@@ -13,45 +13,54 @@ void swap(int *q, int *w)
 /**
  * part - ushghsu
  * @array: jjshghs
+ * @size: dhhbhef
  * @l: ksjhhshs
- * @h: jjshhs
+ * @r: jjshhs
  * Return: hahjakaskks
  */
-size_t part(int *array, ssize_t l, ssize_t h)
+int part(int *array, size_t size, int l, int r)
 {
-	int p = array[h];
-	ssize_t s = l - 1, m;
+	int *p, ab, be;
 
-	for (m = l; m <= h - 1; m++)
+	p = array + r;
+	for (ab = be = l; be < r; be++)
 	{
-		if (array[m] <= p)
+		if (array[be] < *p)
 		{
-			s++;
-			swap(&array[s], &array[m]);
-			if (s != m)
-				print_array(array, h + 1);
+			if (ab < be)
+			{
+				swap(array + be, array + ab);
+				print_array(array, size);
+			}
+			ab++;
 		}
 	}
-	swap(&array[s + 1], &array[h]);
-	if (s + 1 != h)
-		print_array(array, h + 1);
-	return (s + 1);
+	if (array[ab] > *p)
+	{
+		swap(array + ab, p);
+		print_array(array, size);
+	}
+	return (ab);
 }
+
 /**
  * quick - jhsghsjjkkw
  * @array: jsjhhs
+ * @size: jdjhgd
  * @l: jsjhhs
- * @h: jksjhshjs
+ * @r: jksjhshjs
  */
-void quick(int *array, ssize_t l, ssize_t h)
+void quick(int *array, size_t size, int l, int r)
 {
-	if (l < h)
-	{
-		ssize_t pi = part(array, l, h);
+	int pa;
 
-		quick(array, l, pi - 1);
-		quick(array, pi + 1, h);
+	if (r - l > 0)
+	{
+		pa = part(array, size, l, r);
+		quick(array, size, l, pa - 1);
+		quick(array, size, pa + 1, r);
 	}
+
 }
 /**
  * quick_sort - jshghsjs
@@ -62,6 +71,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	quick(array, 0, size - 1);
+	quick(array, size, 0, size - 1);
 }
 
