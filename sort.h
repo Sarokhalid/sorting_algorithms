@@ -39,4 +39,7 @@ void ms(int *sub, int *buf, size_t f, size_t md, size_t b);
 void heap(int *array, size_t size, size_t b, size_t ro);
 void sw(int *q, int *w);
 void heap_sort(int *array, size_t size);
+void count(int *array, size_t size, int si, int *buf);
+int get(int *array, int size);
+void radix_sort(int *array, size_t size);
 #endif
