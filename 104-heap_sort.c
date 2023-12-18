@@ -26,7 +26,7 @@ void heap(int *array, size_t size, size_t b, size_t ro)
 	}
 }
 /**
- * s - hggf
+ * sw - hggf
  * @q: jhhhf
  * @w: jkhjhd
  */
