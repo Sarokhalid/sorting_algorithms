@@ -1,5 +1,7 @@
 #ifndef SORT_H
 #define SORT_H
+#define UP 0
+#define DOWN 1
 #include <stddef.h>
 #include <sys/types.h>
 #include <stdio.h>
@@ -42,4 +44,8 @@ void heap_sort(int *array, size_t size);
 void count(int *array, size_t size, int si, int *buf);
 int get(int *array, int size);
 void radix_sort(int *array, size_t size);
+void SW(int *q, int *w);
+void b(int *array, size_t size, size_t st, size_t sq, char f);
+void bs(int *array, size_t size, size_t st, size_t sq, char f);
+void bitonic_sort(int *array, size_t size);
 #endif
