@@ -17,7 +17,7 @@ void ms(int *sub, int *buf, size_t f, size_t md, size_t b)
 	for (s = f, m = md; s < md && m < b; k++)
 		buf[k] = (sub[s] < sub[m]) ? sub[s++] : sub[m++];
 	for (; s < md; s++)
-		buf[k++] = sub[m];
+		buf[k++] = sub[s];
 	for (; m < b; m++)
 		buf[k++] = sub[m];
 	for (s = f, k = 0; s < b; s++)
