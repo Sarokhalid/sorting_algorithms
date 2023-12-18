@@ -33,4 +33,7 @@ void swab(listint_t **list, listint_t **ta, listint_t **sh);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 int maxi(int *array, int size);
+void merge_sort(int *array, size_t size);
+void mr(int *sub, int *buf, size_t f, size_t b);
+void ms(int *sub, int *buf, size_t f, size_t md, size_t b);
 #endif
