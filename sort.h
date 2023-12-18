@@ -36,4 +36,7 @@ int maxi(int *array, int size);
 void merge_sort(int *array, size_t size);
 void mr(int *sub, int *buf, size_t f, size_t b);
 void ms(int *sub, int *buf, size_t f, size_t md, size_t b);
+void heap(int *array, size_t size, size_t b, size_t ro);
+void sw(int *q, int *w);
+void heap_sort(int *array, size_t size);
 #endif
