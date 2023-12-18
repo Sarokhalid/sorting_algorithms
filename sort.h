@@ -48,4 +48,8 @@ void SW(int *q, int *w);
 void b(int *array, size_t size, size_t st, size_t sq, char f);
 void bs(int *array, size_t size, size_t st, size_t sq, char f);
 void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
+void hs(int *array, size_t size, int l, int r);
+int hpart(int *array, size_t size, int l, int r);
+void SWA(int *q, int *w);
 #endif
